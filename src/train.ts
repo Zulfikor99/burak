@@ -1,3 +1,26 @@
+console.log("==========TASK N==========");
+
+/*
+
+Shunday function yozing, u string qabul qilsin va
+string palindrom yani togri oqilganda ham, orqasidan
+oqilganda ham bir hil oqiladigan soz ekanligini aniqlab
+boolean qiymat qaytarsin.
+
+MASALAN: palindromCheck("dad") return true;
+palindromCheck("son") return false;
+
+*/
+
+function palindromCheck(str: string) {
+  const reverse = str.split("").reverse().join("");
+  return str === reverse;
+}
+
+console.log(palindromCheck("dad")); // true
+console.log(palindromCheck("son")); // false
+console.log(palindromCheck("mom")); // true
+
 console.log("==========TASK M==========");
 
 /*
