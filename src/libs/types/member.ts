@@ -1,6 +1,7 @@
 import { MemberStatus, MemberType } from "../enums/member.enum";
 
 export interface Member {
+  // db dan qaytayotgan data
   memberType: MemberType;
   memberStatus: MemberStatus;
   memberNick: string;
@@ -24,4 +25,9 @@ export interface MemberInput {
   memberDesc?: string;
   memberImage?: string;
   memberPoints?: number;
+}
+
+export interface LoginInput {
+  memberNick: string;
+  memberPassword: string;
 }
