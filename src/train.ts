@@ -1,3 +1,29 @@
+console.log("==========TASK Q==========");
+/*
+Shunday function yozing, u 2 ta parametrga ega bo'lib
+birinchisi object, ikkinchisi string bo'lsin.
+Agar qabul qilinayotgan ikkinchi string, objectning
+biror bir propertysiga mos kelsa, 'true', aks holda mos
+kelmasa 'false' qaytarsin.
+
+MASALAN: hasProperty({ name: "BMW", model: "M3" }, "model"); return true;
+Ushbu misolda, 'model' string, objectning propertysiga mos kelganligi
+uchun 'true' natijani qaytarmoqda
+
+
+*/
+function hasProperty(obj: object, str: string): boolean {
+  for (let key in obj) {
+    if (key === str) {
+      return true;
+    }
+  }
+  return false;
+}
+console.log(hasProperty({ name: "BMW", model: "M3" }, "model"));
+console.log(hasProperty({ name: "BMW", model: "M3" }, "age"));
+console.log(hasProperty({ name: "BMW", model: "M3" }, "name"));
+
 console.log("==========TASK P==========");
 
 /*
