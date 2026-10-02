@@ -36,7 +36,7 @@ memberController.login = async (req: Request, res: Response) => {
     res.json({ member: result });
   } catch (err) {
     console.log("Error login:", err);
-    res.json({});
+    res.json({ error: err });
   }
 };
 
