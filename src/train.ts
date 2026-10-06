@@ -1,3 +1,24 @@
+console.log("==========TASK S==========");
+
+/*
+Shunday function yozing, u numberlardan tashkil topgan
+array qabul qilsin va osha numberlar orasidagi tushib qolgan
+sonni topib uni return qilsin
+MASALAN: missingNumber([3, 0, 1]) return 2
+*/
+
+function missingNumber(arr: number[]): number {
+  const sortedArr = arr.sort((a, b) => a - b);
+  for (let i = 0; i < sortedArr.length; i++) {
+    if (sortedArr[i] + 1 !== sortedArr[i + 1]) {
+      return sortedArr[i] + 1;
+    }
+  }
+  return -1;
+}
+console.log(missingNumber([3, 0, 1]));
+console.log(missingNumber([9, 6, 3, 5, 2, 7, 8, 1]));
+
 console.log("==========TASK R==========");
 /*
 Shunday function yozing, u string parametrga ega bo'lsin.
