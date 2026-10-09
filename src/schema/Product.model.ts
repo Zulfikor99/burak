@@ -1,4 +1,5 @@
 import mongoose, { Schema } from "mongoose";
+import { Product } from "../libs/types/product";
 import {
   ProductCollection,
   ProductSize,
@@ -6,7 +7,7 @@ import {
   ProductVolume,
 } from "../libs/enums/product.enum";
 
-const productSchema = new Schema(
+const productSchema = new Schema<Product>(
   {
     productStatus: {
       type: String,
@@ -42,14 +43,13 @@ const productSchema = new Schema(
     },
 
     productVolume: {
-      type: String,
+      type: Number,
       enum: ProductVolume,
       default: ProductVolume.ONE,
     },
 
     productDesc: {
       type: String,
-      required: true,
     },
 
     productImages: {
@@ -70,4 +70,4 @@ productSchema.index(
   { unique: true }
 );
 
-export default mongoose.model("Product", productSchema);
+export default mongoose.model<Product>("Product", productSchema);
