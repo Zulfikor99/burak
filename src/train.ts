@@ -1,3 +1,29 @@
+console.log("==========TASK U==========");
+
+/*
+Shunday function tuzing, uni number parametri bo'lsin.
+Va bu function berilgan parametrgacha, 0'dan boshlab
+oraliqda nechta toq sonlar borligini aniqlab return qilsi.
+
+MASALAN: sumOdds(9) return 4; sumOdds(11) return 5;
+
+Yuqoridagi birinchi misolda, argument sifatida, 9 berilmoqda.
+Va 0'dan boshlab sanaganda 9'gacha 4'ta toq son mavjud.
+Keyingi namunada ham xuddi shunday xolat takrorlanmoqda.
+*/
+
+function sumOdds(num: number): number {
+  let count = 0;
+  for (let i = 0; i < num; i++) {
+    if (!(i % 2 === 0)) {
+      count++;
+    }
+  }
+  return count;
+}
+console.log(sumOdds(9));
+console.log(sumOdds(11));
+
 console.log("==========TASK T==========");
 
 /*
