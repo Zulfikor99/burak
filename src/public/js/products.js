@@ -66,7 +66,7 @@ function validateForm() {
 }
 
 function previewFileHandler(input, order) {
-  const imgClassName = input.className;
+  const imgClassName = input.className; // image-one ni string
   console.log("input:", input);
 
   const file = $(`.${imgClassName}`).get(0).files[0];
