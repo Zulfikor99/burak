@@ -13,7 +13,7 @@ $(function () {
   });
   $("#process-btn").on("click", () => {
     $(".dish-container").slideToggle(500);
-    $("#process-btn").css("display", "none");
+    $("#process-btn").css("display", "none"); // btn yuqoladi
   });
 
   $("#cancel-btn").on("click", () => {
@@ -75,7 +75,7 @@ function previewFileHandler(input, order) {
   } else {
     if (file) {
       const reader = new FileReader();
-      reader.onload = function () {
+      reader.onload = function () { // file uqib bulingach do func.
         $(`#image-section-${order}`).attr("src", reader.result);
       };
       reader.readAsDataURL(file);

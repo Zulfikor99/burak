@@ -13,7 +13,7 @@ $(function () {
       })
       .then((response) => {
         console.log("response:", response);
-        const result = response.data;
+        const result = response.data; // axios by default tanlagani
         if (result.data) {
           console.log("User updated!");
           $(".member-status").blur();
