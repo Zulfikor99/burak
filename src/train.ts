@@ -1,3 +1,32 @@
+console.log("==========TASK Y==========");
+
+/*
+Shunday function yozing, uni 2'ta array parametri bo'lsin.
+Bu function ikkala arrayda ham ishtirok etgan bir xil
+qiymatlarni yagona arrayga joylab qaytarsin.
+
+MASALAN: findIntersection([1,2,3], [3,2,0]) return [2,3]
+
+Yuqoridagi misolda, argument sifatida berilayotgan array'larda
+o'xshash sonlar mavjud. Function'ning vazifasi esa ana shu
+ikkala array'da ishtirok etgan o'xshash sonlarni yagona arrayga
+joylab return qilmoqda.
+*/
+
+function findIntersection(arr1: number[], arr2: number[]): number[] {
+  let array: number[] = [];
+  for (let i = 0; i < arr1.length; i++) {
+    for (let j = 0; j < arr2.length; j++) {
+      if (arr1[i] === arr2[j]) {
+        array.push(arr1[i]);
+      }
+    }
+  }
+  return array;
+}
+
+console.log(findIntersection([1, 2, 3], [3, 2, 0]));
+
 console.log("==========TASK X==========");
 
 /*
@@ -28,7 +57,10 @@ function countOccurrences(obj: object, key: string): number {
 }
 
 console.log(
-  countOccurrences({ model: "Bugatti", steer: { model: "HANKOOK", size: 30 } }, "model")
+  countOccurrences(
+    { model: "Bugatti", steer: { model: "HANKOOK", size: 30 } },
+    "model"
+  )
 );
 
 console.log("==========TASK W==========");
