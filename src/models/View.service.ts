@@ -8,7 +8,7 @@ class ViewService {
   constructor() {
     this.viewModel = ViewModel;
   }
-  public async checkViewExistence(input: ViewInput): Promise<View> {
+  public async checkViewExistence(input: ViewInput): Promise<View> { // Define
     //@ts-ignore
     return await this.viewModel
       .findOne({ memberId: input.memberId, viewRefId: input.viewRefId })

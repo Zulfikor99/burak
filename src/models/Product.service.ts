@@ -34,7 +34,7 @@ class ProductService {
 
     const sort: T =
       inquiry.order === "productPrice"
-        ? { [inquiry.order]: 1 }
+        ? { [inquiry.order]: 1 } // Dynamic key
         : { [inquiry.order]: -1 };
 
     const result = await this.productModel
@@ -62,30 +62,30 @@ class ProductService {
       })
       .exec();
     if (!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
-if (memberId) {
-  // Check Existence
-  const input: ViewInput = {
-    memberId: memberId,
-    viewRefId: productId,
-    viewGroup: ViewGroup.PRODUCT,
-  };
-  const existView = await this.viewService.checkViewExistence(input);
+    if (memberId) {
+      // Check Existence
+      const input: ViewInput = {
+        memberId: memberId, // :id dan keladi
+        viewRefId: productId,
+        viewGroup: ViewGroup.PRODUCT,
+      };
+      const existView = await this.viewService.checkViewExistence(input); //Call
 
-  console.log("exist:", !!existView);
-  if (!existView) {
-    // Insert View
-    await this.viewService.insertMemberView(input);
+      console.log("exist:", !!existView);
+      if (!existView) {
+        // Insert View
+        await this.viewService.insertMemberView(input);
 
-    // Increase Counts
-    result = await this.productModel
-      .findByIdAndUpdate(
-        productId,
-        { $inc: { productViews: +1 } },
-        { new: true }
-      )
-      .exec();
-  }
-} //@ts-ignore
+        // Increase Counts
+        result = await this.productModel
+          .findByIdAndUpdate(
+            productId,
+            { $inc: { productViews: +1 } },
+            { new: true }
+          )
+          .exec();
+      }
+    } //@ts-ignore
     return result;
   }
 
